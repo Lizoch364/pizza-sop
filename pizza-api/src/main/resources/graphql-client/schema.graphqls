@@ -1,0 +1,71 @@
+type Product {
+    id: ID!
+    name: String
+    description: String
+    count: Int
+}
+
+type Dish {
+    id: ID!
+    name: String
+    products: [Product]
+    price: Float
+    isActive: Boolean
+}
+
+type Order {
+    id: ID!
+    dishes: [Dish]
+    status: String
+    promo: String
+    createdAt: String
+}
+
+type DishPage {
+    content: [Dish]
+    pageNumber: Int
+    pageSize: Int
+    totalElements: Int
+    totalPages: Int
+    last: Boolean
+}
+
+type Query {
+    orders(orderStatus: String, dish: String): [Order]
+    orderById(id: ID!): Order
+
+    dishes(isActive: Boolean = true, page: Int = 0, size: Int = 10): DishPage
+    dishById(id: ID!): Dish
+}
+
+input DishInput {
+    name: String!
+    products: [Int]!
+    price: Float
+}
+
+input DishUpdateInput {
+    id: ID!
+    name: String!
+    products: [Int]!
+    price: Float
+}
+
+input OrderInput {
+    dishes: [Int]!
+    promo: String!
+}
+
+type Mutation {
+    createOrder(input: OrderInput!): Order
+    deleteOrder(id: ID!): ID
+
+    createDish(input: DishInput!): Dish
+    updateDish(id: ID!, input: DishUpdateInput!): Dish
+    deleteDish(id: ID!): ID
+}
+
+
+
+
+
