@@ -10,6 +10,7 @@ import com.example.demo.domain.Dish;
 import com.example.demo.domain.Order;
 import com.example.demo.domain.Product;
 import com.example.demo.events.OrderCreatedEvent;
+import com.example.demo.events.OrderDeletedEvent;
 import com.example.demo.repository.DishRepository;
 import com.example.demo.repository.OrderRepository;
 import com.example.demo.services.OrderService;
@@ -97,6 +98,9 @@ public class OrderServiceImpl implements OrderService {
 
         order.get().setStatus(OrderStatus.CANCELLED);
 
+        OrderDeletedEvent event = new OrderDeletedEvent(id);
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY_ORDER_DELETED, event);
+
         orderRepository.update(order.get());
     }
 
@@ -139,6 +143,5 @@ public class OrderServiceImpl implements OrderService {
                 product.getDescription(),
                 product.getCount()
         );
-
     }
 }
