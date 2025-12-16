@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   jenkins:
-    dockerfile: jenkins.Dockerfile
     build:
       context: .
       dockerfile: jenkins.Dockerfile
