@@ -41,8 +41,7 @@ pipeline {
 
                             sh 'docker compose -f docker-compose.yml build --no-cache'
 
-                            stage('Debug Files') {
-                                steps {
+
                                     sh 'pwd'
                                     sh 'ls -la'
                                     sh '''
@@ -54,10 +53,9 @@ pipeline {
                                         echo "ERROR: prometheus.yml is a directory, not a file!"
                                         exit 1
                                     fi
-                                    echo "✅ prometheus.yml exists and is a file"
+                                    echo "prometheus.yml exists and is a file"
                                     '''
-                                }
-                            }
+
 
                             sh 'docker compose -f docker-compose.yml up -d'
                         }
