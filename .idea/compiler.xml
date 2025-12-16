@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="analytics-service" />
+        <module name="events-contract" />
+        <module name="statistics-service" />
+        <module name="demo" />
+        <module name="pizza-api" />
+        <module name="audit-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
