@@ -6,10 +6,8 @@ scrape_configs:
     metrics_path: "/actuator/prometheus"
     static_configs:
       - targets:
-          [
-            "demo-rest:8080",
-            "notification-service:8083",
-            "audit-service:8082",
-            "analytics-service:8081",
-          ]
+          - "demo-rest:8080"
+          - "notification-service:8083"
+          - "audit-service:8082"
+          - "analytics-service:8081"
 
