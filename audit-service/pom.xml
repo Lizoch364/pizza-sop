@@ -11,7 +11,7 @@
 	<artifactId>audit-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>audit-service</name>
-<!--	<description>events-contract</description>-->
+
 	<url/>
 	<licenses>
 		<license/>
@@ -45,13 +45,6 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>com.example</groupId>-->
-<!--			<artifactId>events-contract</artifactId>-->
-<!--			<version>1.4</version>-->
-<!--			<scope>system</scope>-->
-<!--			<systemPath>${project.basedir}/lib/demo.jar</systemPath>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

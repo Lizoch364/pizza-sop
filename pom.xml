@@ -13,6 +13,7 @@
         <module>pizza-api</module>
         <module>statistics-service</module>
         <module>pizza</module>
+        <module>simple-notification-service</module>
     </modules>
 
     <properties>
